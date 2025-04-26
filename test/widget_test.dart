@@ -7,13 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:twazoon/main.dart';
+import 'package:twazoon/core/routing/app_router.dart';
+import 'package:twazoon/core/routing/routes.dart';
+import 'package:twazoon/twazoon.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(Twazoon(appRoutes: AppRouter(), initialRoute: Routes.splashScreen,));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
