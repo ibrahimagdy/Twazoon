@@ -19,22 +19,19 @@ class Twazoon extends StatelessWidget {
       designSize: const Size(393, 852),
       minTextAdapt: true,
       child: MaterialApp(
-        //navigatorKey: navigatorKey,
         title: 'Twazoon',
         theme: ThemeData(
           primaryColor: ColorsManager.mainLavender,
-          //scaffoldBackgroundColor: ColorsManager.scaffoldBackground,
           appBarTheme: const AppBarTheme(
             centerTitle: true,
             iconTheme: IconThemeData(
               color: ColorsManager.mainLavender,
             ),
             scrolledUnderElevation: 0,
-            //backgroundColor: ColorsManager.scaffoldBackground,
           ),
         ),
         debugShowCheckedModeBanner: false,
-        //initialRoute: initialRoute,
+        initialRoute: initialRoute,
         onGenerateRoute: appRoutes.generateRoute,
       ),
     );

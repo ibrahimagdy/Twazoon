@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twazoon/core/routing/routes.dart';
+import 'package:twazoon/features/onboarding/onboarding_screen.dart';
 
 class AppRouter {
 
@@ -8,7 +9,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
-          builder: (_) => const Placeholder(),
+          builder: (_) => const OnBoardingScreen(),
         );
       default:
         return MaterialPageRoute(

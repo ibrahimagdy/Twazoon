@@ -94,6 +94,8 @@ dependencies:
   rxdart: ^0.28.0
   #Collections and utilities functions and classes related to collections
   collection: ^1.18.0
+  # Customizable animated page indicator with a set of built-in effects
+  smooth_page_indicator: ^1.2.1
 
 dev_dependencies:
   flutter_test:
