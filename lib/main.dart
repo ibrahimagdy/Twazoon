@@ -7,7 +7,7 @@ import 'core/helpers/shared_pref_helper.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(Twazoon(appRoutes: AppRouter(), initialRoute: Routes.splashScreen));
+  runApp(Twazoon(appRoutes: AppRouter(), initialRoute: Routes.onBoardingScreen));
 }
 
 Future<bool> checkIfLoggedInUser() async {
