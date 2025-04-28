@@ -5,9 +5,14 @@ import 'package:twazoon/core/theming/colors_manger.dart';
 import 'package:twazoon/core/theming/font_weight_helper.dart';
 
 class TextStyles {
-  static TextStyle font24OceanBlueSemiBold = GoogleFonts.cairo(
-    fontSize: 24.sp,
+  static TextStyle font16BlackMedium = GoogleFonts.cairo(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.black,
+  );
+  static TextStyle font16BlackSemiBold = GoogleFonts.cairo(
+    fontSize: 16.sp,
     fontWeight: FontWeightHelper.semiBold,
-    color: ColorsManager.mainLavender,
+    color: ColorsManager.black,
   );
 }

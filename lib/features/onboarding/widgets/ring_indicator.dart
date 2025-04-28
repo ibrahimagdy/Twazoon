@@ -26,7 +26,7 @@ class RingIndicatorPainter extends CustomPainter {
       2 * 3.141592653589793,
       false,
       Paint()
-        ..color = color.withOpacity(0.2)
+        ..color = color.withValues(alpha: 0.2)
         ..style = PaintingStyle.stroke
         ..strokeWidth = strokeWidth
         ..strokeCap = StrokeCap.round,
