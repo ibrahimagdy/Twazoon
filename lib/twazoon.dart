@@ -21,6 +21,7 @@ class Twazoon extends StatelessWidget {
       child: MaterialApp(
         title: 'Twazoon',
         theme: ThemeData(
+          scaffoldBackgroundColor: ColorsManager.white,
           primaryColor: ColorsManager.mainLavender,
           appBarTheme: const AppBarTheme(
             centerTitle: true,

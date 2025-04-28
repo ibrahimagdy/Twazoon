@@ -40,16 +40,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   @override
   Widget build(BuildContext context) {
     List<OnBoardingModel> onboardingList = getOnBoardingList();
-
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
             children: [
-              verticalSpace(30),
+              verticalSpace(20),
               const OnBoardingLogo(),
-              verticalSpace(30),
+              verticalSpace(19),
               Expanded(
                 child: OnBoardingPageView(
                   controller: _controller,
@@ -61,19 +60,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   },
                 ),
               ),
-              verticalSpace(30.h),
+              verticalSpace(36),
               OnBoardingIndicator(
                 controller: _controller,
                 length: onboardingList.length,
               ),
-              verticalSpace(30.h),
+              verticalSpace(30),
               OnBoardingNavigation(
                 controller: _controller,
                 currentPage: currentPage,
                 length: onboardingList.length,
                 onNextPage: _onNextPage,
               ),
-              verticalSpace(20.h),
+              verticalSpace(20),
             ],
           ),
         ),

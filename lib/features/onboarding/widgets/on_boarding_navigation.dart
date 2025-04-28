@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
+import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/features/onboarding/widgets/on_boarding_button.dart';
 
 class OnBoardingNavigation extends StatelessWidget {
@@ -27,13 +27,8 @@ class OnBoardingNavigation extends StatelessWidget {
             //context.pushNamed(Routes.loginScreen);
           },
           child: Text(
-            'Skip',
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: ColorsManager.mainLavender,
-              decoration: TextDecoration.underline,
-              fontWeight: FontWeight.w500,
-            ),
+            'تخطي',
+            style: TextStyles.font16BlackSemiBold
           ),
         ),
         FillableButton(

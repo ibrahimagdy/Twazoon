@@ -3,24 +3,16 @@ import 'package:twazoon/features/onboarding/model/on_boarding_model.dart';
 List<OnBoardingModel> getOnBoardingList() {
   return [
     OnBoardingModel(
-      imagePath: 'assets/svgs/fisrt_onboarding.svg',
-      title: 'Personalized Anxiety Support',
-      body: 'Our app provides personalized support\ntailored to your needs, '
-          'helping you\nnavigate your anxiety with confidence\nand control. '
-          'Let\'s take this journey\ntogether.',
+      imagePath: 'assets/images/first_onboarding.png',
+      title: 'رحلتك نحو راحة نفسية تبدأ من هنا، بجلسات علاجية وتمارين يقظة ذهنية مصممة خصيصًا لك',
     ),
     OnBoardingModel(
-      imagePath: 'assets/svgs/second_onboarding.svg',
-      title: 'AI-Powered Recommendations',
-      body: 'Our AI assesses your anxiety through\nsimple surveys, providing '
-          'you with\ncustomized recommendations that\nmatch your current state.',
+      imagePath: 'assets/images/second_onboarding.png',
+      title: 'تطبيق ذكي لمساعدتك على تنظيم مشاعرك وتقليل مستويات القلق باستخدام أساليب علمية حديثة',
     ),
     OnBoardingModel(
-      imagePath: 'assets/svgs/last_onboading.svg',
-      title: 'Instant Help & Community',
-      body: 'Need help right away? Our chatbot is\nhere for immediate support, '
-          'and our\ncommunity feature lets you connect\nwith others who '
-          'understand your\nexperiences.',
+      imagePath: 'assets/images/last_onboarding.png',
+      title: 'مع توازن، تكتسب مهارات الوعي الذاتي وإدارة الضغوط النفسية بخطوات عملية مدروسة',
     ),
   ];
 }
