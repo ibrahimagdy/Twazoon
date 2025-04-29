@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
   final double? width;
@@ -99,7 +100,7 @@ class AppTextFormField extends StatelessWidget {
         onSaved: onSaved,
         maxLines: maxLines ?? 1,
         minLines: minLines ?? 1,
-        //style: inputTextStyle ?? TextStyles.font12lightBlackLight,
+        style: inputTextStyle ?? TextStyles.font14GeryMedium,
         autofillHints: autofillHints,
         inputFormatters: inputFormatters,
         decoration:
@@ -110,22 +111,17 @@ class AppTextFormField extends StatelessWidget {
               contentPadding:
                   contentPadding ??
                   EdgeInsets.symmetric(vertical: 13.h, horizontal: 13.w),
-              // enabledBorder: enabledBorder ??
-              //     buildOutlineInputBorder(
-              //         color: borderColor ?? ColorsManager.mainBlueWith50Opacity,
-              //     ),
-              // focusedBorder:
-              //     focusedBorder ??
-              //     buildOutlineInputBorder(
-              //       color: borderColor ?? ColorsManager.mainBlue,
-              //     ),
+              enabledBorder:
+                  enabledBorder ??
+                  buildOutlineInputBorder(
+                    color: ColorsManager.mainLavenderLight,
+                  ),
+              focusedBorder:
+                  focusedBorder ??
+                  buildOutlineInputBorder(color: ColorsManager.mainLavender),
               focusedErrorBorder: buildOutlineInputBorder(color: Colors.red),
               errorBorder: buildOutlineInputBorder(color: Colors.red),
-              // hintStyle:
-              //     hintStyle ??
-              //     TextStyles.font12lightBlackLight.copyWith(
-              //       color: ColorsManager.lightBlack.withValues(alpha: 0.8),
-              //     ),
+              hintStyle: hintStyle ?? TextStyles.font14GeryMedium,
               hintText: hintText,
               suffixIcon: suffixIcon,
               prefixIcon:
@@ -135,7 +131,7 @@ class AppTextFormField extends StatelessWidget {
                         child: prefixIcon,
                       )
                       : null,
-              //fillColor: backgroundColor ?? ColorsManager.mainBlueWith1Opacity,
+              fillColor: ColorsManager.white,
               filled: true,
             ),
       ),

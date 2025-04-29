@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twazoon/core/theming/font_weight_helper.dart';
 
 class AppTextButton extends StatelessWidget {
   final String textButton;
@@ -49,43 +51,45 @@ class AppTextButton extends StatelessWidget {
         onPressed: enabled && !isLoading ? onPressed : null,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor ?? ColorsManager.mainLavender,
-          disabledBackgroundColor: disabledBackgroundColor ??
+          disabledBackgroundColor:
+              disabledBackgroundColor ??
               ColorsManager.mainLavender.withValues(alpha: 0.8),
           disabledForegroundColor: disabledTextColor ?? ColorsManager.white,
           padding: padding ?? EdgeInsets.symmetric(vertical: 12.h),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              borderRadius ?? 20.r,
-            ),
+            borderRadius: BorderRadius.circular(borderRadius ?? 20.r),
             side: BorderSide(
               width: 2.w,
-              color: (onPressed == null || isLoading)
-                  ? Colors.transparent
-                  : borderColor ?? ColorsManager.mainLavender,
+              color:
+                  (onPressed == null || isLoading)
+                      ? Colors.transparent
+                      : borderColor ?? ColorsManager.mainLavender,
             ),
           ),
         ),
-        child: isLoading
-            ? SizedBox(
-          width: 20.w,
-          height: 20.h,
-          child: CircularProgressIndicator(
-            strokeWidth: 2,
-            valueColor: AlwaysStoppedAnimation<Color>(
-              textColor ?? ColorsManager.white,
-            ),
-          ),
-        )
-            : Text(
-          textButton,
-          // style: TextStyles.font16WhiteMedium.copyWith(
-          //   color: onPressed == null
-          //       ? disabledTextColor ?? ColorsManager.white
-          //       : textColor ?? ColorsManager.white,
-          //   fontSize: fontSize ?? 16,
-          //   fontWeight: fontWeight ?? FontWeightHelper.semiBold,
-          // ),
-        ),
+        child:
+            isLoading
+                ? SizedBox(
+                  width: 20.w,
+                  height: 20.h,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 2,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      textColor ?? ColorsManager.white,
+                    ),
+                  ),
+                )
+                : Text(
+                  textButton,
+                  style: TextStyles.font18WhiteMedium.copyWith(
+                    color:
+                        onPressed == null
+                            ? disabledTextColor ?? ColorsManager.white
+                            : textColor ?? ColorsManager.white,
+                    fontSize: fontSize ?? 16,
+                    fontWeight: fontWeight ?? FontWeightHelper.semiBold,
+                  ),
+                ),
       ),
     );
   }
