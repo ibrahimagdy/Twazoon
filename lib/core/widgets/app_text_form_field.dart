@@ -113,7 +113,9 @@ class AppTextFormField extends StatelessWidget {
                   EdgeInsets.symmetric(vertical: 13.h, horizontal: 13.w),
               enabledBorder:
                   enabledBorder ??
-                  buildOutlineInputBorder(color: ColorsManager.mainLavender),
+                  buildOutlineInputBorder(
+                    color: ColorsManager.mainLavenderLight,
+                  ),
               focusedBorder:
                   focusedBorder ??
                   buildOutlineInputBorder(color: ColorsManager.mainLavender),
