@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:twazoon/core/routing/routes.dart';
 import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
+import 'package:twazoon/core/helpers/extensions.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
 import 'package:twazoon/core/widgets/app_text_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -102,7 +104,9 @@ class _FirstSignUpFormQuestionsState extends State<FirstSignUpFormQuestions> {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: AppTextButton(
             textButton: "التالي",
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routes.secondSignUpScreen);
+            },
             borderRadius: 10.r,
           ),
         ),

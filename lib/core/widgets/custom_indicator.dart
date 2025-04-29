@@ -26,14 +26,20 @@ class CustomIndicator extends StatelessWidget {
           height: 3.h,
           width: (width ?? 40).w,
           decoration: BoxDecoration(
-            color:
-                index <= currentPage
-                    ? ColorsManager.mainLavenderLight
-                    : ColorsManager.mainLavender,
+            color: _getIndicatorColor(index),
             borderRadius: BorderRadius.circular(20.r),
           ),
         ),
       ),
     );
+  }
+
+  Color _getIndicatorColor(int index) {
+    if (totalPages == 2 && currentPage == 1) {
+      return ColorsManager.mainLavender;
+    }
+    return index <= currentPage
+        ? ColorsManager.mainLavenderLight
+        : ColorsManager.mainLavender;
   }
 }
