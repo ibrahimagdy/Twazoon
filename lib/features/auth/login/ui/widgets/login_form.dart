@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:twazoon/core/routing/routes.dart';
 import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
+import 'package:twazoon/core/helpers/extensions.dart';
 import 'package:twazoon/core/widgets/app_text_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twazoon/core/widgets/app_text_form_field.dart';
@@ -78,7 +80,9 @@ class LoginForm extends StatelessWidget {
             children: [
               Text("لا تمتلك حساب؟ ", style: TextStyles.font14BlackMedium),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed( Routes.firstSignUpScreen);
+                },
                 child: Text(
                   "قم بأنشاء حساب",
                   style: TextStyles.font14DarkLavenderBold,

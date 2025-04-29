@@ -45,4 +45,9 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.grey,
   );
+  static TextStyle font22LightLavenderMedium = GoogleFonts.cairo(
+    fontSize: 22.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.mainLavenderLight,
+  );
 }
