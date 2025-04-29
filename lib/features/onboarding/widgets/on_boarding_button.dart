@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'ring_indicator.dart';
 
-class FillableButton extends StatefulWidget {
+class OnBoardingButton extends StatefulWidget {
   final VoidCallback onPressed;
   final Color fillColor;
   final Color textColor;
   final double progress;
 
-  const FillableButton({
+  const OnBoardingButton({
     super.key,
     required this.onPressed,
     required this.fillColor,
@@ -17,10 +17,10 @@ class FillableButton extends StatefulWidget {
   });
 
   @override
-  State<FillableButton> createState() => _FillableButtonState();
+  State<OnBoardingButton> createState() => _OnBoardingButtonState();
 }
 
-class _FillableButtonState extends State<FillableButton> {
+class _OnBoardingButtonState extends State<OnBoardingButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

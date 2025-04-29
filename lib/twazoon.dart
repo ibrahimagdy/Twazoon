@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twazoon/core/routing/app_router.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class Twazoon extends StatelessWidget {
   final AppRouter appRoutes;
@@ -31,6 +32,21 @@ class Twazoon extends StatelessWidget {
             scrolledUnderElevation: 0,
           ),
         ),
+        locale: const Locale('ar'),
+        localizationsDelegates: const [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ar'),
+        ],
+        builder: (context, child) {
+          return Directionality(
+            textDirection: TextDirection.rtl,
+            child: child!,
+          );
+        },
         debugShowCheckedModeBanner: false,
         initialRoute: initialRoute,
         onGenerateRoute: appRoutes.generateRoute,

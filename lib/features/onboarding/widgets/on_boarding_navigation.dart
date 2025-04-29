@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:twazoon/core/helpers/extensions.dart';
+import 'package:twazoon/core/routing/routes.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
 import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/features/onboarding/widgets/on_boarding_button.dart';
@@ -22,20 +24,20 @@ class OnBoardingNavigation extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        OnBoardingButton(
+          onPressed: onNextPage,
+          fillColor: ColorsManager.mainLavender,
+          textColor: ColorsManager.white,
+          progress: (currentPage + 1) / length,
+        ),
         TextButton(
           onPressed: () {
-            //context.pushNamed(Routes.loginScreen);
+            context.pushNamed(Routes.loginScreen);
           },
           child: Text(
             'تخطي',
             style: TextStyles.font16BlackSemiBold
           ),
-        ),
-        FillableButton(
-          onPressed: onNextPage,
-          fillColor: ColorsManager.mainLavender,
-          textColor: ColorsManager.white,
-          progress: (currentPage + 1) / length,
         ),
       ],
     );

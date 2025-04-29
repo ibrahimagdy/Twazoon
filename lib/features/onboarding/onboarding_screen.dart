@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twazoon/core/helpers/extensions.dart';
 import 'package:twazoon/core/helpers/shared_pref_helper.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
+import 'package:twazoon/core/routing/routes.dart';
 import 'package:twazoon/features/onboarding/model/on_boarding_model.dart';
 import 'package:twazoon/features/onboarding/widgets/on_boarding_indicator.dart';
 import 'package:twazoon/features/onboarding/widgets/on_boarding_logo.dart';
@@ -34,7 +36,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   Future<void> completeOnboarding(BuildContext context) async {
     await SharedPrefHelper.setData(SharedPrefKeys.isFirstLaunch, false);
     await SharedPrefHelper.clearAllSecuredData();
-   // context.pushNamed(Routes.loginScreen);
+    if(context.mounted){
+      context.pushNamed(Routes.loginScreen);
+    }
   }
 
   @override

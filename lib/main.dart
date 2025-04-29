@@ -7,7 +7,7 @@ import 'package:twazoon/core/routing/app_router.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(Twazoon(appRoutes: AppRouter(), initialRoute: Routes.loginScreen));
+  runApp(Twazoon(appRoutes: AppRouter(), initialRoute: Routes.onBoardingScreen));
 }
 
 Future<bool> checkIfLoggedInUser() async {

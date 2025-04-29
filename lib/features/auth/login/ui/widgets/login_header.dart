@@ -11,7 +11,6 @@ class LoginHeader extends StatelessWidget {
     return Stack(
       alignment: Alignment.topCenter,
       children: [
-        // Curved SVG background
         SizedBox(
           width: double.infinity,
           height: 300.h,
@@ -20,7 +19,6 @@ class LoginHeader extends StatelessWidget {
             fit: BoxFit.fill,
           ),
         ),
-        // Logo and title
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -30,7 +28,6 @@ class LoginHeader extends StatelessWidget {
               width: 70.w,
               height: 88.h,
             ),
-            verticalSpace(20),
             Image.asset(
               "assets/images/twazoon_word.png",
               width: 70.w,
