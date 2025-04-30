@@ -15,14 +15,12 @@ class LoginScreen extends StatelessWidget {
             children: [
               SizedBox(
                 height: MediaQuery.of(context).size.height,
-                width: double.infinity,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
                     Positioned.fill(
                       child: SvgPicture.asset(
                         'assets/svgs/login_curve_line.svg',
-                        fit: BoxFit.cover,
                       ),
                     ),
                     Column(children: const [LoginHeader(), LoginForm()]),

@@ -18,22 +18,22 @@ class LoginForm extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("تسجيل الدخول", style: TextStyles.font20BlackMedium),
-          verticalSpace(20),
+          verticalSpace(18),
           AppTextFormField(
             hintText: "البريد الالكتروني الخاص بالكلية",
             keyboardType: TextInputType.emailAddress,
           ),
-          verticalSpace(15),
+          verticalSpace(16),
           AppTextFormField(
             hintText: "كلمة المرور",
             isObscureText: true,
             suffixIcon: Icon(
               Icons.visibility_off,
-              size: 20.sp,
+              size: 16.sp,
               color: Colors.grey,
             ),
           ),
-          verticalSpace(10),
+          verticalSpace(16),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -46,14 +46,14 @@ class LoginForm extends StatelessWidget {
               ),
             ],
           ),
-          verticalSpace(30),
+          verticalSpace(33),
           AppTextButton(
             textButton: "تسجيل الدخول",
             onPressed: () {
             },
-            borderRadius: 10.r,
+            borderRadius: 8.r,
           ),
-          verticalSpace(20),
+          verticalSpace(26),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

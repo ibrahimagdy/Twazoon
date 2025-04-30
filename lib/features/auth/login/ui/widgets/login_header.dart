@@ -10,7 +10,7 @@ class LoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        verticalSpace(33),
+        verticalSpace(50),
         Image.asset(
           "assets/images/logo_lavender.png",
           width: 70.w,

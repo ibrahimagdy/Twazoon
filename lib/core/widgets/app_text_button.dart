@@ -86,7 +86,7 @@ class AppTextButton extends StatelessWidget {
                         onPressed == null
                             ? disabledTextColor ?? ColorsManager.white
                             : textColor ?? ColorsManager.white,
-                    fontSize: fontSize ?? 16,
+                    fontSize: fontSize ?? 18.sp,
                     fontWeight: fontWeight ?? FontWeightHelper.semiBold,
                   ),
                 ),

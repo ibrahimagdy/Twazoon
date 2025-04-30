@@ -100,7 +100,7 @@ class AppTextFormField extends StatelessWidget {
         onSaved: onSaved,
         maxLines: maxLines ?? 1,
         minLines: minLines ?? 1,
-        style: inputTextStyle ?? TextStyles.font14GeryMedium,
+        style: inputTextStyle ?? TextStyles.font14BlackMedium,
         autofillHints: autofillHints,
         inputFormatters: inputFormatters,
         decoration:
@@ -121,7 +121,7 @@ class AppTextFormField extends StatelessWidget {
                   buildOutlineInputBorder(color: ColorsManager.mainLavender),
               focusedErrorBorder: buildOutlineInputBorder(color: Colors.red),
               errorBorder: buildOutlineInputBorder(color: Colors.red),
-              hintStyle: hintStyle ?? TextStyles.font14GeryMedium,
+              hintStyle: hintStyle ?? TextStyles.font14DarkGeryMedium,
               hintText: hintText,
               suffixIcon: suffixIcon,
               prefixIcon:
@@ -140,8 +140,8 @@ class AppTextFormField extends StatelessWidget {
 
   OutlineInputBorder buildOutlineInputBorder({required Color color}) {
     return OutlineInputBorder(
-      borderSide: BorderSide(color: color, width: 1.3),
-      borderRadius: BorderRadius.circular(borderRadius ?? 5.r),
+      borderSide: BorderSide(color: color, width: 1.5),
+      borderRadius: BorderRadius.circular(borderRadius ?? 8.r),
     );
   }
 }
