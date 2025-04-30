@@ -22,24 +22,18 @@ class CustomIndicator extends StatelessWidget {
         totalPages,
         (index) => AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          margin: const EdgeInsets.symmetric(horizontal: 4),
-          height: 3.h,
-          width: (width ?? 40).w,
+          margin: EdgeInsets.symmetric(horizontal: 4.w),
+          height: 4.h,
+          width: (width ?? 42.w).w,
           decoration: BoxDecoration(
-            color: _getIndicatorColor(index),
-            borderRadius: BorderRadius.circular(20.r),
+            color: index <= currentPage
+                ? ColorsManager.mainLavender
+                : ColorsManager.mainLavenderLight,
+            borderRadius: BorderRadius.circular(22.r),
           ),
         ),
       ),
     );
   }
 
-  Color _getIndicatorColor(int index) {
-    if (totalPages == 2 && currentPage == 1) {
-      return ColorsManager.mainLavender;
-    }
-    return index <= currentPage
-        ? ColorsManager.mainLavenderLight
-        : ColorsManager.mainLavender;
-  }
 }

@@ -26,6 +26,7 @@ class Twazoon extends StatelessWidget {
           primaryColor: ColorsManager.mainLavender,
           appBarTheme: const AppBarTheme(
             centerTitle: true,
+            backgroundColor: ColorsManager.white,
             iconTheme: IconThemeData(
               color: ColorsManager.mainLavender,
             ),

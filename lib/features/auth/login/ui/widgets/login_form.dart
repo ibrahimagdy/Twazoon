@@ -60,7 +60,7 @@ class LoginForm extends StatelessWidget {
               Text("لا تمتلك حساب؟ ", style: TextStyles.font14BlackMedium),
               GestureDetector(
                 onTap: () {
-                  context.pushNamed(Routes.firstSignUpScreen);
+                  context.pushNamed(Routes.signUpScreen);
                 },
                 child: Text(
                   "قم بأنشاء حساب",
