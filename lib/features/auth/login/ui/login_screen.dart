@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:twazoon/features/auth/login/ui/widgets/login_form.dart';
 import 'package:twazoon/features/auth/login/ui/widgets/login_header.dart';
 
@@ -10,7 +11,26 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(children: const [LoginHeader(), LoginForm()]),
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                width: double.infinity,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Positioned.fill(
+                      child: SvgPicture.asset(
+                        'assets/svgs/login_curve_line.svg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Column(children: const [LoginHeader(), LoginForm()]),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
