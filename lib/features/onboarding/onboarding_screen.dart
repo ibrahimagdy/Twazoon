@@ -37,7 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     await SharedPrefHelper.setData(SharedPrefKeys.isFirstLaunch, false);
     await SharedPrefHelper.clearAllSecuredData();
     if(context.mounted){
-      context.pushNamed(Routes.loginScreen);
+      context.pushReplacementNamed(Routes.loginScreen);
     }
   }
 

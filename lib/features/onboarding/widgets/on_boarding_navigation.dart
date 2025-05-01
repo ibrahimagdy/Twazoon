@@ -32,7 +32,7 @@ class OnBoardingNavigation extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            context.pushNamed(Routes.loginScreen);
+            context.pushReplacementNamed(Routes.loginScreen);
           },
           child: Text(
             'تخطي',
