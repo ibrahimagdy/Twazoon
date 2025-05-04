@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twazoon/core/helpers/extensions.dart';
 import 'package:twazoon/core/routing/routes.dart';
@@ -6,6 +7,7 @@ import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
 import 'package:twazoon/core/widgets/app_text_button.dart';
 import 'package:twazoon/core/widgets/custom_indicator.dart';
+import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:twazoon/features/auth/sign_up/ui/widgets/sign_up_forms_list.dart';
 import 'package:twazoon/features/auth/sign_up/ui/widgets/sign_up_page_view_builder.dart';
 
@@ -21,16 +23,16 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
   int currentPage = 0;
 
   void _onNextPage() {
-    // final cubit = context.read<EngineerAccountSignUpCubit>();
-    //
-    // switch (currentPage) {
-    //   case 0:
-    //     if (!cubit.userAndEmailFormKey.currentState!.validate()) return;
-    //     break;
-    //   case 1:
-    //     if (!cubit.passwordFormKey.currentState!.validate()) return;
-    //     break;
-    // }
+    final cubit = context.read()<SignUpCubit>();
+
+    switch (currentPage) {
+      case 0:
+        if (!cubit.firstFormKey.currentState!.validate()) return;
+        break;
+      case 1:
+        if (!cubit.secondFormKey.currentState!.validate()) return;
+        break;
+    }
 
     if (currentPage < signUpFormsScreens.length - 1) {
       _controller.nextPage(
@@ -39,7 +41,7 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
       );
       setState(() => currentPage++);
     } else {
-      //cubit.emitEngineerSignupStates();
+      cubit().emitSignupStates();
     }
   }
 
@@ -91,7 +93,6 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
                   ),
                 ],
               ),
-
               verticalSpace(55),
             ],
           ),
