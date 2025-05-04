@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:twazoon/features/auth/login/data/model/login_request_body.dart';
 import 'package:twazoon/features/auth/login/data/model/login_response_body.dart';
+import 'package:twazoon/features/auth/sign_up/data/models/sign_up_request_model.dart';
+import 'package:twazoon/features/auth/sign_up/data/models/sign_up_response_model.dart';
 
 part 'api_service.g.dart';
 
@@ -12,4 +14,9 @@ abstract class ApiService {
 
   @POST(ApiConstants.login)
   Future<LoginResponseBody> login(@Body() LoginRequestBody loginRequestBody);
+
+  @POST(ApiConstants.register)
+  Future<SignUpResponseModel> signUp(
+    @Body() SignUpRequestModel signUpRequestModel,
+  );
 }
