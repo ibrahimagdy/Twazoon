@@ -1,6 +1,6 @@
 class AppRegex {
   static bool isEmailValid(String email) {
-    return RegExp(r'^.+@[a-zA-Z]+\.[a-zA-Z]+(\.?[a-zA-Z]+)$')
+    return RegExp(r'^[a-zA-Z0-9._%+-]+@std\.mans\.edu\.eg$')
         .hasMatch(email);
   }
 
