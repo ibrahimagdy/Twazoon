@@ -1,36 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:twazoon/core/routing/routes.dart';
-import 'package:twazoon/core/theming/styles.dart';
+import 'package:twazoon/core/helpers/app_validation.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
-import 'package:twazoon/core/helpers/extensions.dart';
-import 'package:twazoon/core/widgets/app_text_button.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:twazoon/core/theming/colors_manger.dart';
+import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/widgets/app_text_form_field.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+class LoginForm extends StatefulWidget {
+  final GlobalKey<FormState> formKey;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+
+  const LoginForm({
+    super.key,
+    required this.formKey,
+    required this.emailController,
+    required this.passwordController,
+  });
 
   @override
+  State<LoginForm> createState() => _LoginFormState();
+}
+
+class _LoginFormState extends State<LoginForm> {
+  bool isObscureText = true;
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.w),
+    return Form(
+      key: widget.formKey,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("تسجيل الدخول", style: TextStyles.font20BlackMedium),
           verticalSpace(18),
           AppTextFormField(
             hintText: "البريد الالكتروني الخاص بالكلية",
-            keyboardType: TextInputType.emailAddress,
+            controller: widget.emailController,
+            validator: validateEmail,
           ),
           verticalSpace(16),
           AppTextFormField(
             hintText: "كلمة المرور",
-            isObscureText: true,
-            suffixIcon: Icon(
-              Icons.visibility_off,
-              size: 16.sp,
-              color: Colors.grey,
+            isObscureText: isObscureText,
+            controller: widget.passwordController,
+            validator: validatePassword,
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isObscureText = !isObscureText;
+                });
+              },
+              child: Icon(
+                isObscureText ? Icons.visibility_off : Icons.visibility,
+                color: isObscureText
+                    ? ColorsManager.mainLavender
+                    : ColorsManager.black,
+              ),
             ),
           ),
           verticalSpace(16),
@@ -47,28 +70,6 @@ class LoginForm extends StatelessWidget {
             ],
           ),
           verticalSpace(33),
-          AppTextButton(
-            textButton: "تسجيل الدخول",
-            onPressed: () {
-            },
-            borderRadius: 8.r,
-          ),
-          verticalSpace(26),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("لا تمتلك حساب؟ ", style: TextStyles.font14BlackMedium),
-              GestureDetector(
-                onTap: () {
-                  context.pushNamed(Routes.signUpScreen);
-                },
-                child: Text(
-                  "قم بأنشاء حساب",
-                  style: TextStyles.font14DarkLavenderBold,
-                ),
-              ),
-            ],
-          ),
         ],
       ),
     );

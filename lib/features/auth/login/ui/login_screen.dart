@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:twazoon/features/auth/login/ui/widgets/login_form.dart';
+import 'package:twazoon/features/auth/login/ui/widgets/login_bloc_listener.dart';
+import 'package:twazoon/features/auth/login/ui/widgets/login_form_with_button.dart';
 import 'package:twazoon/features/auth/login/ui/widgets/login_header.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -23,10 +24,13 @@ class LoginScreen extends StatelessWidget {
                         'assets/svgs/login_curve_line.svg',
                       ),
                     ),
-                    Column(children: const [LoginHeader(), LoginForm()]),
+                    Column(
+                      children: const [LoginHeader(), LoginFormWithButton()],
+                    ),
                   ],
                 ),
               ),
+              const LoginBlocListener(),
             ],
           ),
         ),
