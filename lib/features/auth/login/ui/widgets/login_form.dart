@@ -28,6 +28,7 @@ class _LoginFormState extends State<LoginForm> {
     return Form(
       key: widget.formKey,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("تسجيل الدخول", style: TextStyles.font20BlackMedium),
           verticalSpace(18),

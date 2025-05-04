@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:twazoon/core/theming/styles.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class AppLayout extends StatelessWidget {
+  const AppLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
