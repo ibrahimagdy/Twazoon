@@ -9,7 +9,22 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
 
-  runApp(Twazoon(appRoutes: AppRouter(), initialRoute: Routes.onBoardingScreen));
+  final bool isFirstLaunch = await SharedPrefHelper.isFirstLaunch();
+  String initialRoute;
+
+  if (isFirstLaunch) {
+    initialRoute = Routes.onBoardingScreen;
+  } else {
+    final bool isLoggedIn = await checkIfLoggedInUser();
+    initialRoute = isLoggedIn ? Routes.appLayout : Routes.loginScreen;
+  }
+
+  runApp(
+    Twazoon(
+      appRoutes: AppRouter(),
+      initialRoute: Routes.onBoardingScreen,
+    ),
+  );
 }
 
 Future<bool> checkIfLoggedInUser() async {
