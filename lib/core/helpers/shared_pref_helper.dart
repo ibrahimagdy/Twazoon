@@ -5,6 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 bool isLoggedInUser = false;
 
 class SharedPrefKeys {
+  static const String isLoggedIn = 'isLoggedIn';
   static const String userToken = 'userToken';
   static const String isFirstLaunch = 'isFirstLaunch';
   static const String isSurveyCompleted = 'isSurveyCompleted';
