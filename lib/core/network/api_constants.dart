@@ -5,5 +5,3 @@ class ApiConstants {
   static const String register = 'Account/Register';
 
 }
-
-

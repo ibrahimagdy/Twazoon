@@ -40,11 +40,6 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.white,
   );
-  static TextStyle font12WhiteMedium = GoogleFonts.cairo(
-    fontSize: 12.sp,
-    fontWeight: FontWeightHelper.medium,
-    color: ColorsManager.white,
-  );
   static TextStyle font14DarkGeryMedium = GoogleFonts.cairo(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.medium,

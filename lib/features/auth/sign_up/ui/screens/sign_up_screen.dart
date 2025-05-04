@@ -8,6 +8,7 @@ import 'package:twazoon/core/helpers/spacing.dart';
 import 'package:twazoon/core/widgets/app_text_button.dart';
 import 'package:twazoon/core/widgets/custom_indicator.dart';
 import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
+import 'package:twazoon/features/auth/sign_up/ui/widgets/sign_up_bloc_listener.dart';
 import 'package:twazoon/features/auth/sign_up/ui/widgets/sign_up_forms_list.dart';
 import 'package:twazoon/features/auth/sign_up/ui/widgets/sign_up_page_view_builder.dart';
 
@@ -23,7 +24,7 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
   int currentPage = 0;
 
   void _onNextPage() {
-    final cubit = context.read()<SignUpCubit>();
+    final cubit = context.read<SignUpCubit>();
 
     switch (currentPage) {
       case 0:
@@ -41,7 +42,7 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
       );
       setState(() => currentPage++);
     } else {
-      cubit().emitSignupStates();
+      cubit.emitSignupStates(context);
     }
   }
 
@@ -63,19 +64,24 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
                 currentPage: currentPage,
                 totalPages: signUpFormsScreens.length,
               ),
-              verticalSpace(60),
+              verticalSpace(45),
               Expanded(
                 child: SignUpPageViewBuilder(
                   controller: _controller,
                   onPageChanged: (index) => setState(() => currentPage = index),
                 ),
               ),
-              AppTextButton(
-                onPressed: _onNextPage,
-                textButton:
+              Column(
+                children: [
+                  const SignUpBlocListener(),
+                  AppTextButton(
+                    onPressed: _onNextPage,
+                    textButton:
                     currentPage == signUpFormsScreens.length - 1
                         ? 'إنشاء حساب'
                         : 'التالي',
+                  ),
+                ],
               ),
               verticalSpace(20),
               Row(

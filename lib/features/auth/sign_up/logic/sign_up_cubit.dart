@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:twazoon/core/network/api_error_model.dart';
 import 'package:twazoon/features/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:twazoon/features/auth/sign_up/data/repo/sign_up_repo.dart';
 import 'package:twazoon/features/auth/sign_up/logic/sign_up_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   final SignUpRepo _signUpRepo;
-  String? _gender;
-  bool? _troubleSleeping;
+  String _gender = 'ذكر';
+  bool _troubleSleeping = true;
 
   SignUpCubit(this._signUpRepo) : super(const SignUpState.initial());
 
@@ -31,12 +30,6 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   void emitSignupStates(BuildContext context) async {
-    if (_gender == null || _troubleSleeping == null) {
-      emit(SignUpState.signUpError(
-          error: ApiErrorModel(message: "يرجى ملء جميع الحقول")));
-      return;
-    }
-
     emit(const SignUpState.signUpLoading());
     final response = await _signUpRepo.signUp(
       SignUpRequestModel(
@@ -47,8 +40,8 @@ class SignUpCubit extends Cubit<SignUpState> {
         email: emailController.text,
         password: passwordController.text,
         confirmPassword: confirmPasswordController.text,
-        gender: _gender!,
-        troubleSleeping: _troubleSleeping!,
+        gender: _gender,
+        troubleSleeping: _troubleSleeping,
       ),
     );
 
@@ -57,5 +50,17 @@ class SignUpCubit extends Cubit<SignUpState> {
     }, failure: (error) {
       emit(SignUpState.signUpError(error: error));
     });
+  }
+
+  @override
+  Future<void> close() {
+    facultyController.dispose();
+    levelController.dispose();
+    lastGradeController.dispose();
+    userNameController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    return super.close();
   }
 }
