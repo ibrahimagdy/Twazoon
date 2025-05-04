@@ -1,12 +1,11 @@
 class AppRegex {
   static bool isEmailValid(String email) {
-    return RegExp(r'^.+@[a-zA-Z]+\.[a-zA-Z]+(\.?[a-zA-Z]+)$')
+    return RegExp(r'^[a-zA-Z0-9._%+-]+@std\.mans\.edu\.eg$')
         .hasMatch(email);
   }
 
   static bool isPasswordValid(String password) {
-    return RegExp(
-        r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$")
+    return RegExp(r'^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{6,}$')
         .hasMatch(password);
   }
 
