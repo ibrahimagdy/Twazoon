@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
+import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:twazoon/features/auth/sign_up/ui/widgets/custom_radio_option.dart';
 
 class FirstSignUpFormQuestions extends StatefulWidget {
@@ -12,8 +14,18 @@ class FirstSignUpFormQuestions extends StatefulWidget {
 }
 
 class _FirstSignUpFormQuestionsState extends State<FirstSignUpFormQuestions> {
-  String? _hasSleepProblems = 'نعم';
-  String? _gender = 'ذكر';
+  String _hasSleepProblems = 'نعم';
+  String _gender = 'ذكر';
+  late SignUpCubit cubit;
+
+  @override
+  void initState() {
+    super.initState();
+    cubit = context.read<SignUpCubit>();
+
+    cubit.setGender(_gender);
+    cubit.setTroubleSleeping(_hasSleepProblems);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +44,7 @@ class _FirstSignUpFormQuestionsState extends State<FirstSignUpFormQuestions> {
               onTap: (value) {
                 setState(() {
                   _gender = value;
+                  cubit.setGender(value);
                 });
               },
             ),
@@ -43,6 +56,7 @@ class _FirstSignUpFormQuestionsState extends State<FirstSignUpFormQuestions> {
               onTap: (value) {
                 setState(() {
                   _gender = value;
+                  cubit.setGender(value);
                 });
               },
             ),
@@ -67,6 +81,7 @@ class _FirstSignUpFormQuestionsState extends State<FirstSignUpFormQuestions> {
                   onTap: (value) {
                     setState(() {
                       _hasSleepProblems = value;
+                      cubit.setTroubleSleeping(value);
                     });
                   },
                 ),
@@ -78,6 +93,7 @@ class _FirstSignUpFormQuestionsState extends State<FirstSignUpFormQuestions> {
                   onTap: (value) {
                     setState(() {
                       _hasSleepProblems = value;
+                      cubit.setTroubleSleeping(value);
                     });
                   },
                 ),

@@ -5,6 +5,7 @@ import 'package:twazoon/core/routing/routes.dart';
 import 'package:twazoon/features/app_layout/app_layout.dart';
 import 'package:twazoon/features/auth/login/logic/login_cubit.dart';
 import 'package:twazoon/features/auth/login/ui/login_screen.dart';
+import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:twazoon/features/onboarding/onboarding_screen.dart';
 import 'package:twazoon/features/auth/sign_up/ui/screens/sign_up_screen.dart';
 
@@ -23,7 +24,13 @@ class AppRouter {
               ),
         );
       case Routes.signUpScreen:
-        return MaterialPageRoute(builder: (_) => const SignUpScreen());
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<SignUpCubit>(),
+                child: SignUpScreen(),
+              ),
+        );
       case Routes.appLayout:
         return MaterialPageRoute(builder: (_) => const AppLayout());
       default:
