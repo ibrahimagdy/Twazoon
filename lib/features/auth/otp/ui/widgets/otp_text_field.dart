@@ -50,7 +50,9 @@ class _OtpTextFieldState extends State<OtpTextField> {
       width: 48.w,
       height: 48.h,
       decoration: BoxDecoration(
-        border: Border.all(color: _hasNumber ? ColorsManager.mainLavender : ColorsManager.grey),
+        border: Border.all(
+          color: _hasNumber ? ColorsManager.mainLavender : ColorsManager.grey,
+        ),
         borderRadius: BorderRadius.circular(8.r),
       ),
       child: TextFormField(
@@ -67,11 +69,19 @@ class _OtpTextFieldState extends State<OtpTextField> {
           border: InputBorder.none,
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: _hasNumber ? ColorsManager.mainLavender : ColorsManager.grey, width: 1.5),
+            borderSide: BorderSide(
+              color:
+                  _hasNumber ? ColorsManager.mainLavender : ColorsManager.grey,
+              width: 1,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: _hasNumber ? ColorsManager.mainLavender : ColorsManager.grey, width: 1),
+            borderSide: BorderSide(
+              color:
+                  _hasNumber ? ColorsManager.mainLavender : ColorsManager.grey,
+              width: 1,
+            ),
           ),
         ),
         onChanged: widget.onChanged,
