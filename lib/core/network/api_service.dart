@@ -1,3 +1,5 @@
+import 'package:twazoon/features/auth/forget_password/data/models/forget_password_request_model.dart';
+
 import 'api_constants.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
@@ -18,5 +20,10 @@ abstract class ApiService {
   @POST(ApiConstants.register)
   Future<SignUpResponseModel> signUp(
     @Body() SignUpRequestModel signUpRequestModel,
+  );
+
+  @POST(ApiConstants.forgetPassword)
+  Future<void> forgetPassword(
+    @Body() ForgetPasswordRequestModel forgetPasswordRequestModel,
   );
 }

@@ -9,16 +9,18 @@ class ForgetPasswordForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        verticalSpace(32),
-        AppTextFormField(
-          hintText: 'البريد الالكتروني',
-          validator: validateEmail,
-        ),
-        verticalSpace(22),
-        AppTextButton(onPressed: () {}, textButton: 'التالي'),
-      ],
+    return Form(
+      child: Column(
+        children: [
+          verticalSpace(32),
+          AppTextFormField(
+            hintText: 'البريد الالكتروني',
+            validator: validateEmail,
+          ),
+          verticalSpace(22),
+          AppTextButton(onPressed: () {}, textButton: 'التالي'),
+        ],
+      ),
     );
   }
 }
