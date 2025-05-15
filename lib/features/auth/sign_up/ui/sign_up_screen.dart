@@ -94,7 +94,7 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
                     },
                     child: Text(
                       "تسجيل الدخول",
-                      style: TextStyles.font14DarkLavenderBold,
+                      style: TextStyles.font14LavenderBold,
                     ),
                   ),
                 ],

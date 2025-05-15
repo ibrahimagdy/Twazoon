@@ -10,6 +10,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.black,
   );
+  static TextStyle font16BlackRegular = GoogleFonts.cairo(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.black,
+  );
   static TextStyle font16BlackSemiBold = GoogleFonts.cairo(
     fontSize: 16.sp,
     fontWeight: FontWeightHelper.semiBold,
@@ -25,10 +30,10 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.mainLavender,
   );
-  static TextStyle font14DarkLavenderBold = GoogleFonts.cairo(
+  static TextStyle font14LavenderBold = GoogleFonts.cairo(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.bold,
-    color: ColorsManager.mainLavenderDark,
+    color: ColorsManager.mainLavender,
   );
   static TextStyle font14BlackMedium = GoogleFonts.cairo(
     fontSize: 14.sp,
