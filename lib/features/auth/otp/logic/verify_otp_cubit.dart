@@ -18,4 +18,13 @@ class VerifyOtpCubit extends Cubit<VerifyOtpState> {
       failure: (error) => emit(VerifyOtpState.error(error: error)),
     );
   }
+
+  Future<void> resendOtp(String email, String purpose) async {
+    emit(const VerifyOtpState.loading());
+    final result = await _verifyOtpRepo.resendOtp(email, purpose);
+    result.when(
+      success: (_) => emit(const VerifyOtpState.resendSuccess()),
+      failure: (error) => emit(VerifyOtpState.error(error: error)),
+    );
+  }
 }

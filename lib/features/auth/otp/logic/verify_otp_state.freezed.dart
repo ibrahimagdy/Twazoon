@@ -22,6 +22,7 @@ mixin _$VerifyOtpState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
+    required TResult Function() resendSuccess,
     required TResult Function(ApiErrorModel error) error,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,6 +30,7 @@ mixin _$VerifyOtpState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
+    TResult? Function()? resendSuccess,
     TResult? Function(ApiErrorModel error)? error,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +38,7 @@ mixin _$VerifyOtpState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
+    TResult Function()? resendSuccess,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -44,6 +47,7 @@ mixin _$VerifyOtpState<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(VerifyOtpLoading<T> value) loading,
     required TResult Function(VerifyOtpSuccess<T> value) success,
+    required TResult Function(VerifyOtpResendSuccess<T> value) resendSuccess,
     required TResult Function(VerifyOtpError<T> value) error,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +55,7 @@ mixin _$VerifyOtpState<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(VerifyOtpLoading<T> value)? loading,
     TResult? Function(VerifyOtpSuccess<T> value)? success,
+    TResult? Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult? Function(VerifyOtpError<T> value)? error,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +63,7 @@ mixin _$VerifyOtpState<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(VerifyOtpLoading<T> value)? loading,
     TResult Function(VerifyOtpSuccess<T> value)? success,
+    TResult Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult Function(VerifyOtpError<T> value)? error,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
@@ -131,6 +137,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
+    required TResult Function() resendSuccess,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return initial();
@@ -142,6 +149,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
+    TResult? Function()? resendSuccess,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return initial?.call();
@@ -153,6 +161,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
+    TResult Function()? resendSuccess,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -168,6 +177,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(VerifyOtpLoading<T> value) loading,
     required TResult Function(VerifyOtpSuccess<T> value) success,
+    required TResult Function(VerifyOtpResendSuccess<T> value) resendSuccess,
     required TResult Function(VerifyOtpError<T> value) error,
   }) {
     return initial(this);
@@ -179,6 +189,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(VerifyOtpLoading<T> value)? loading,
     TResult? Function(VerifyOtpSuccess<T> value)? success,
+    TResult? Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult? Function(VerifyOtpError<T> value)? error,
   }) {
     return initial?.call(this);
@@ -190,6 +201,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(VerifyOtpLoading<T> value)? loading,
     TResult Function(VerifyOtpSuccess<T> value)? success,
+    TResult Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult Function(VerifyOtpError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -251,6 +263,7 @@ class _$VerifyOtpLoadingImpl<T> implements VerifyOtpLoading<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
+    required TResult Function() resendSuccess,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return loading();
@@ -262,6 +275,7 @@ class _$VerifyOtpLoadingImpl<T> implements VerifyOtpLoading<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
+    TResult? Function()? resendSuccess,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return loading?.call();
@@ -273,6 +287,7 @@ class _$VerifyOtpLoadingImpl<T> implements VerifyOtpLoading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
+    TResult Function()? resendSuccess,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -288,6 +303,7 @@ class _$VerifyOtpLoadingImpl<T> implements VerifyOtpLoading<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(VerifyOtpLoading<T> value) loading,
     required TResult Function(VerifyOtpSuccess<T> value) success,
+    required TResult Function(VerifyOtpResendSuccess<T> value) resendSuccess,
     required TResult Function(VerifyOtpError<T> value) error,
   }) {
     return loading(this);
@@ -299,6 +315,7 @@ class _$VerifyOtpLoadingImpl<T> implements VerifyOtpLoading<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(VerifyOtpLoading<T> value)? loading,
     TResult? Function(VerifyOtpSuccess<T> value)? success,
+    TResult? Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult? Function(VerifyOtpError<T> value)? error,
   }) {
     return loading?.call(this);
@@ -310,6 +327,7 @@ class _$VerifyOtpLoadingImpl<T> implements VerifyOtpLoading<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(VerifyOtpLoading<T> value)? loading,
     TResult Function(VerifyOtpSuccess<T> value)? success,
+    TResult Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult Function(VerifyOtpError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -401,6 +419,7 @@ class _$VerifyOtpSuccessImpl<T> implements VerifyOtpSuccess<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
+    required TResult Function() resendSuccess,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return success(data);
@@ -412,6 +431,7 @@ class _$VerifyOtpSuccessImpl<T> implements VerifyOtpSuccess<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
+    TResult? Function()? resendSuccess,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return success?.call(data);
@@ -423,6 +443,7 @@ class _$VerifyOtpSuccessImpl<T> implements VerifyOtpSuccess<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
+    TResult Function()? resendSuccess,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -438,6 +459,7 @@ class _$VerifyOtpSuccessImpl<T> implements VerifyOtpSuccess<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(VerifyOtpLoading<T> value) loading,
     required TResult Function(VerifyOtpSuccess<T> value) success,
+    required TResult Function(VerifyOtpResendSuccess<T> value) resendSuccess,
     required TResult Function(VerifyOtpError<T> value) error,
   }) {
     return success(this);
@@ -449,6 +471,7 @@ class _$VerifyOtpSuccessImpl<T> implements VerifyOtpSuccess<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(VerifyOtpLoading<T> value)? loading,
     TResult? Function(VerifyOtpSuccess<T> value)? success,
+    TResult? Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult? Function(VerifyOtpError<T> value)? error,
   }) {
     return success?.call(this);
@@ -460,6 +483,7 @@ class _$VerifyOtpSuccessImpl<T> implements VerifyOtpSuccess<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(VerifyOtpLoading<T> value)? loading,
     TResult Function(VerifyOtpSuccess<T> value)? success,
+    TResult Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult Function(VerifyOtpError<T> value)? error,
     required TResult orElse(),
   }) {
@@ -480,6 +504,133 @@ abstract class VerifyOtpSuccess<T> implements VerifyOtpState<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$VerifyOtpSuccessImplCopyWith<T, _$VerifyOtpSuccessImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VerifyOtpResendSuccessImplCopyWith<T, $Res> {
+  factory _$$VerifyOtpResendSuccessImplCopyWith(
+    _$VerifyOtpResendSuccessImpl<T> value,
+    $Res Function(_$VerifyOtpResendSuccessImpl<T>) then,
+  ) = __$$VerifyOtpResendSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$VerifyOtpResendSuccessImplCopyWithImpl<T, $Res>
+    extends
+        _$VerifyOtpStateCopyWithImpl<T, $Res, _$VerifyOtpResendSuccessImpl<T>>
+    implements _$$VerifyOtpResendSuccessImplCopyWith<T, $Res> {
+  __$$VerifyOtpResendSuccessImplCopyWithImpl(
+    _$VerifyOtpResendSuccessImpl<T> _value,
+    $Res Function(_$VerifyOtpResendSuccessImpl<T>) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of VerifyOtpState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$VerifyOtpResendSuccessImpl<T> implements VerifyOtpResendSuccess<T> {
+  const _$VerifyOtpResendSuccessImpl();
+
+  @override
+  String toString() {
+    return 'VerifyOtpState<$T>.resendSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VerifyOtpResendSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(T data) success,
+    required TResult Function() resendSuccess,
+    required TResult Function(ApiErrorModel error) error,
+  }) {
+    return resendSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(T data)? success,
+    TResult? Function()? resendSuccess,
+    TResult? Function(ApiErrorModel error)? error,
+  }) {
+    return resendSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(T data)? success,
+    TResult Function()? resendSuccess,
+    TResult Function(ApiErrorModel error)? error,
+    required TResult orElse(),
+  }) {
+    if (resendSuccess != null) {
+      return resendSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(VerifyOtpLoading<T> value) loading,
+    required TResult Function(VerifyOtpSuccess<T> value) success,
+    required TResult Function(VerifyOtpResendSuccess<T> value) resendSuccess,
+    required TResult Function(VerifyOtpError<T> value) error,
+  }) {
+    return resendSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(VerifyOtpLoading<T> value)? loading,
+    TResult? Function(VerifyOtpSuccess<T> value)? success,
+    TResult? Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
+    TResult? Function(VerifyOtpError<T> value)? error,
+  }) {
+    return resendSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(VerifyOtpLoading<T> value)? loading,
+    TResult Function(VerifyOtpSuccess<T> value)? success,
+    TResult Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
+    TResult Function(VerifyOtpError<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (resendSuccess != null) {
+      return resendSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerifyOtpResendSuccess<T> implements VerifyOtpState<T> {
+  const factory VerifyOtpResendSuccess() = _$VerifyOtpResendSuccessImpl<T>;
 }
 
 /// @nodoc
@@ -559,6 +710,7 @@ class _$VerifyOtpErrorImpl<T> implements VerifyOtpError<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(T data) success,
+    required TResult Function() resendSuccess,
     required TResult Function(ApiErrorModel error) error,
   }) {
     return error(this.error);
@@ -570,6 +722,7 @@ class _$VerifyOtpErrorImpl<T> implements VerifyOtpError<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(T data)? success,
+    TResult? Function()? resendSuccess,
     TResult? Function(ApiErrorModel error)? error,
   }) {
     return error?.call(this.error);
@@ -581,6 +734,7 @@ class _$VerifyOtpErrorImpl<T> implements VerifyOtpError<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(T data)? success,
+    TResult Function()? resendSuccess,
     TResult Function(ApiErrorModel error)? error,
     required TResult orElse(),
   }) {
@@ -596,6 +750,7 @@ class _$VerifyOtpErrorImpl<T> implements VerifyOtpError<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(VerifyOtpLoading<T> value) loading,
     required TResult Function(VerifyOtpSuccess<T> value) success,
+    required TResult Function(VerifyOtpResendSuccess<T> value) resendSuccess,
     required TResult Function(VerifyOtpError<T> value) error,
   }) {
     return error(this);
@@ -607,6 +762,7 @@ class _$VerifyOtpErrorImpl<T> implements VerifyOtpError<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(VerifyOtpLoading<T> value)? loading,
     TResult? Function(VerifyOtpSuccess<T> value)? success,
+    TResult? Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult? Function(VerifyOtpError<T> value)? error,
   }) {
     return error?.call(this);
@@ -618,6 +774,7 @@ class _$VerifyOtpErrorImpl<T> implements VerifyOtpError<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(VerifyOtpLoading<T> value)? loading,
     TResult Function(VerifyOtpSuccess<T> value)? success,
+    TResult Function(VerifyOtpResendSuccess<T> value)? resendSuccess,
     TResult Function(VerifyOtpError<T> value)? error,
     required TResult orElse(),
   }) {

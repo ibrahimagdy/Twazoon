@@ -8,6 +8,11 @@ class VerifyOtpState<T> with _$VerifyOtpState<T> {
   const factory VerifyOtpState.initial() = _Initial;
 
   const factory VerifyOtpState.loading() = VerifyOtpLoading;
+
   const factory VerifyOtpState.success(T data) = VerifyOtpSuccess<T>;
-  const factory VerifyOtpState.error({required ApiErrorModel error}) = VerifyOtpError;
+
+  const factory VerifyOtpState.resendSuccess() = VerifyOtpResendSuccess;
+
+  const factory VerifyOtpState.error({required ApiErrorModel error}) =
+      VerifyOtpError;
 }
