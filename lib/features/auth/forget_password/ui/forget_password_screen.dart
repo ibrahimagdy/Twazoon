@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
 import 'package:twazoon/core/theming/styles.dart';
+import 'package:twazoon/features/auth/forget_password/ui/widgets/forget_password_bloc_listener.dart';
 import 'package:twazoon/features/auth/forget_password/ui/widgets/forget_password_form.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -29,6 +30,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             ForgetPasswordForm(),
+            ForgetPasswordBlocListener(),
           ],
         ),
       ),
