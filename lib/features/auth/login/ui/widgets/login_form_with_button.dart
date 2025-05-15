@@ -60,7 +60,7 @@ class _LoginFormWithButtonState extends State<LoginFormWithButton> {
                 },
                 child: Text(
                   "قم بأنشاء حساب",
-                  style: TextStyles.font14DarkLavenderBold,
+                  style: TextStyles.font14LavenderBold,
                 ),
               ),
             ],

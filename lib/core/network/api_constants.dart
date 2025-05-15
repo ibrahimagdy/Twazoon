@@ -3,5 +3,6 @@ class ApiConstants {
 
   static const String login = "Account/login";
   static const String register = 'Account/Register';
+  static const String forgetPassword = 'Account/forgot-password';
 
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:twazoon/core/helpers/app_validation.dart';
+import 'package:twazoon/core/helpers/extensions.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
+import 'package:twazoon/core/routing/routes.dart';
 import 'package:twazoon/core/theming/colors_manger.dart';
 import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/widgets/app_text_form_field.dart';
@@ -62,7 +64,9 @@ class _LoginFormState extends State<LoginForm> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(Routes.forgetPasswordScreen);
+                },
                 child: Text(
                   "نسيت كلمة المرور؟",
                   style: TextStyles.font14LavenderMedium,
