@@ -65,7 +65,13 @@ class AppRouter {
               ),
         );
       case Routes.verifySignUpScreen:
-        return MaterialPageRoute(builder: (_) => const VerifySignUpScreen());
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<VerifyOtpCubit>(),
+                child: VerifySignUpScreen(),
+              ),
+        );
       default:
         return MaterialPageRoute(
           builder:
