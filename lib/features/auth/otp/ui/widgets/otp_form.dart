@@ -70,7 +70,6 @@ class _OtpFormState extends State<OtpForm> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        verticalSpace(32),
         OtpInput(
           key: _otpInputKey,
           onChanged: (value) {

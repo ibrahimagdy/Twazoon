@@ -9,7 +9,7 @@ import 'package:twazoon/features/auth/login/logic/login_cubit.dart';
 import 'package:twazoon/features/auth/login/ui/login_screen.dart';
 import 'package:twazoon/features/auth/otp/logic/verify_otp_cubit.dart';
 import 'package:twazoon/features/auth/otp/ui/otp_screen.dart';
-import 'package:twazoon/features/auth/reset_password/reset_password_screen.dart';
+import 'package:twazoon/features/auth/reset_password/ui/reset_password_screen.dart';
 import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:twazoon/features/onboarding/onboarding_screen.dart';
 import 'package:twazoon/features/auth/sign_up/ui/sign_up_screen.dart';

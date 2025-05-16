@@ -29,6 +29,7 @@ class OtpScreen extends StatelessWidget {
                 style: TextStyles.font16BlackRegular,
                 textAlign: TextAlign.center,
               ),
+              verticalSpace(32),
               OtpForm(),
             ],
           ),
