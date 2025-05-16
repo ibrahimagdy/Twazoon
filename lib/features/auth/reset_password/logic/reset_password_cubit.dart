@@ -12,12 +12,12 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController newPasswordController = TextEditingController();
   final TextEditingController confirmPasswordController =
-      TextEditingController();
+  TextEditingController();
   bool isPasswordHidden = true;
   bool isConfirmPasswordHidden = true;
 
   ResetPasswordCubit(this._resetPasswordRepo)
-    : super(const ResetPasswordState.initial()) {
+      : super(const ResetPasswordState.initial()) {
     _loadStoredData();
   }
 
@@ -70,6 +70,9 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
       );
       return;
     }
+    if (!formKey.currentState!.validate()) {
+      return;
+    }
     emit(const ResetPasswordState.resetPasswordLoading());
     final requestModel = ResetPasswordRequestModel(
       email: _email!,
@@ -78,7 +81,9 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
     );
     final result = await _resetPasswordRepo.resetPassword(requestModel);
     result.when(
-      success: (_) => emit(const ResetPasswordState.resetPasswordSuccess()),
+      success: (response) => emit(ResetPasswordState.resetPasswordSuccess(
+        message: response.message,
+      )),
       failure: (error) => emit(ResetPasswordState.error(error: error)),
     );
   }

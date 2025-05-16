@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
 import 'package:twazoon/core/theming/styles.dart';
+import 'package:twazoon/features/auth/reset_password/ui/widgets/reset_password_bloc_listener.dart';
 import 'package:twazoon/features/auth/reset_password/ui/widgets/reset_password_form.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -28,6 +29,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             verticalSpace(32),
             ResetPasswordForm(),
+            ResetPasswordBlocListener(),
           ],
         ),
       ),
