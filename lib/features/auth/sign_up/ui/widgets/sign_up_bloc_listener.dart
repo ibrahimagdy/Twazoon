@@ -25,7 +25,7 @@ class SignUpBlocListener extends StatelessWidget {
           },
           signUpSuccess: (_) {
             context.pushNamedAndRemoveUntil(
-              Routes.appLayout,
+              Routes.verifySignUpScreen,
               predicate: (Route<dynamic> route) => false,
             );
           },
