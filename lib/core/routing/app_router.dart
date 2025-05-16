@@ -9,7 +9,8 @@ import 'package:twazoon/features/auth/login/logic/login_cubit.dart';
 import 'package:twazoon/features/auth/login/ui/login_screen.dart';
 import 'package:twazoon/features/auth/otp/logic/verify_otp_cubit.dart';
 import 'package:twazoon/features/auth/otp/ui/otp_screen.dart';
-import 'package:twazoon/features/auth/reset_password/reset_password_screen.dart';
+import 'package:twazoon/features/auth/reset_password/logic/reset_password_cubit.dart';
+import 'package:twazoon/features/auth/reset_password/ui/reset_password_screen.dart';
 import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
 import 'package:twazoon/features/onboarding/onboarding_screen.dart';
 import 'package:twazoon/features/auth/sign_up/ui/sign_up_screen.dart';
@@ -55,7 +56,13 @@ class AppRouter {
               ),
         );
       case Routes.resetPasswordScreen:
-        return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
+        return MaterialPageRoute(
+          builder:
+              (_) => BlocProvider(
+                create: (context) => getIt<ResetPasswordCubit>(),
+                child: ResetPasswordScreen(),
+              ),
+        );
       default:
         return MaterialPageRoute(
           builder:
