@@ -6,6 +6,8 @@ import 'package:twazoon/features/auth/login/data/model/login_response_body.dart'
 import 'package:twazoon/features/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:twazoon/features/auth/sign_up/data/models/sign_up_response_model.dart';
 import 'package:twazoon/features/auth/forget_password/data/models/forget_password_request_model.dart';
+import 'package:twazoon/features/auth/otp/data/models/verify_otp_request_model.dart';
+import 'package:twazoon/features/auth/otp/data/models/verify_otp_response_model.dart';
 
 part 'api_service.g.dart';
 
@@ -24,5 +26,10 @@ abstract class ApiService {
   @POST(ApiConstants.forgetPassword)
   Future<void> forgetPassword(
     @Body() ForgetPasswordRequestModel forgetPasswordRequestModel,
+  );
+
+  @POST(ApiConstants.verifyOtp)
+  Future<VerifyOtpResponseModel> verifyOtp(
+    @Body() VerifyOtpRequestModel verifyOtpRequestModel,
   );
 }

@@ -6,6 +6,8 @@ import 'package:twazoon/features/auth/forget_password/data/repo/forget_password_
 import 'package:twazoon/features/auth/forget_password/logic/forget_password_cubit.dart';
 import 'package:twazoon/features/auth/login/data/repo/login_repo.dart';
 import 'package:twazoon/features/auth/login/logic/login_cubit.dart';
+import 'package:twazoon/features/auth/otp/data/repo/verify_otp_repo.dart';
+import 'package:twazoon/features/auth/otp/logic/verify_otp_cubit.dart';
 import 'package:twazoon/features/auth/sign_up/data/repo/sign_up_repo.dart';
 import 'package:twazoon/features/auth/sign_up/logic/sign_up_cubit.dart';
 
@@ -25,4 +27,7 @@ Future<void> setupGetIt() async {
   // forget password
   getIt.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(getIt()));
   getIt.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(getIt()));
+  // otp
+  getIt.registerLazySingleton<VerifyOtpRepo>(() => VerifyOtpRepo(getIt()));
+  getIt.registerFactory<VerifyOtpCubit>(() => VerifyOtpCubit(getIt()));
 }
