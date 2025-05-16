@@ -30,6 +30,7 @@ class LoginCubit extends Cubit<LoginState> {
 
         await SharedPrefHelper.setData(SharedPrefKeys.isLoggedIn, true);
         await SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, accessToken);
+        await SharedPrefHelper.setOtpVerified(true);
 
         emit(LoginState.success(
           loginResponse: loginResponse,

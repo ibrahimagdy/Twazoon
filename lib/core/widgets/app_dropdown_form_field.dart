@@ -7,6 +7,7 @@ class AppDropdownFormField extends StatelessWidget {
   final List<String> items;
   final String hintText;
   final ValueChanged<String?> onChanged;
+  final FormFieldValidator<String>? validator;
 
   const AppDropdownFormField({
     super.key,
@@ -14,11 +15,15 @@ class AppDropdownFormField extends StatelessWidget {
     required this.items,
     required this.hintText,
     required this.onChanged,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
+    final formFieldKey = GlobalKey<FormFieldState>();
+
     return DropdownButtonFormField<String>(
+      key: formFieldKey,
       value: selectedValue,
       hint: Text(hintText),
       isExpanded: true,
@@ -51,7 +56,11 @@ class AppDropdownFormField extends StatelessWidget {
           child: Text(value),
         );
       }).toList(),
-      onChanged: onChanged,
+      onChanged: (String? newValue) {
+        onChanged(newValue);
+        formFieldKey.currentState?.validate();
+      },
+      validator: validator,
     );
   }
 }

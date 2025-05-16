@@ -15,21 +15,42 @@ void main() async {
   if (isFirstLaunch) {
     initialRoute = Routes.onBoardingScreen;
   } else {
-    final bool isLoggedIn = await checkIfLoggedInUser();
-    initialRoute = isLoggedIn ? Routes.appLayout : Routes.loginScreen;
+    final authStatus = await checkUserAuthStatus();
+
+    if (authStatus['isLoggedIn']) {
+      if (authStatus['isVerified']) {
+        initialRoute = Routes.appLayout;
+      } else {
+        initialRoute = Routes.verifySignUpScreen;
+      }
+    } else if (authStatus['userEmail'] != null && authStatus['userEmail'].isNotEmpty) {
+      initialRoute = Routes.verifySignUpScreen;
+    } else {
+      initialRoute = Routes.loginScreen;
+    }
   }
 
   runApp(
     Twazoon(
       appRoutes: AppRouter(),
-      initialRoute: Routes.onBoardingScreen,
+      initialRoute: initialRoute,
     ),
   );
 }
 
-Future<bool> checkIfLoggedInUser() async {
+Future<Map<String, dynamic>> checkUserAuthStatus() async {
   String? userToken = await SharedPrefHelper.getSecuredString(
     SharedPrefKeys.userToken,
   );
-  return userToken != null && userToken.isNotEmpty;
+  String? userEmail = await SharedPrefHelper.getString(
+    SharedPrefKeys.userEmail,
+  );
+  bool isLoggedIn = userToken != null && userToken.isNotEmpty;
+  bool isVerified = await SharedPrefHelper.isOtpVerified();
+
+  return {
+    'isLoggedIn': isLoggedIn,
+    'isVerified': isVerified,
+    'userEmail': userEmail,
+  };
 }

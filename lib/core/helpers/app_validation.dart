@@ -36,3 +36,39 @@ String? validateConfirmPassword(String? value, String password) {
   }
   return null;
 }
+
+String? validateGrade(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'يرجى إدخال المعدل';
+  }
+
+  final grade = int.tryParse(value);
+  if (grade == null) {
+    return 'الرجاء إدخال رقم صحيح صالح';
+  }
+
+  if (value.contains('.')) {
+    return 'المعدل يجب أن يكون إلي أقرب رقم صحيح بدون كسور عشرية';
+  }
+
+  if (grade < 0 || grade > 100) {
+    return 'يجب أن يكون المعدل بين 0 و 100';
+  }
+
+  return null;
+}
+
+String? validateFaculty(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'الرجاء اختيار الكلية';
+  }
+  return null;
+}
+
+String? validateLevel(String? value) {
+  if (value == null || value.isEmpty) {
+    return 'الرجاء اختيار الفرقة';
+  }
+  return null;
+}
+

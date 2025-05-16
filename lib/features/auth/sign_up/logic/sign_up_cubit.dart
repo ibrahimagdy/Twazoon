@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:twazoon/core/helpers/shared_pref_helper.dart';
 import 'package:twazoon/features/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:twazoon/features/auth/sign_up/data/repo/sign_up_repo.dart';
 import 'package:twazoon/features/auth/sign_up/logic/sign_up_state.dart';
@@ -46,6 +47,8 @@ class SignUpCubit extends Cubit<SignUpState> {
     );
 
     response.when(success: (signupResponse) async {
+      await SharedPrefHelper.setData('email', emailController.text);
+      await SharedPrefHelper.setOtpVerified(false);
       emit(SignUpState.signUpSuccess(signupResponse));
     }, failure: (error) {
       emit(SignUpState.signUpError(error: error));

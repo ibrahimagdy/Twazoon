@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:twazoon/core/helpers/app_validation.dart';
 import 'package:twazoon/core/helpers/constants.dart';
 import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/core/helpers/spacing.dart';
@@ -42,6 +43,7 @@ class _FirstSignUpFormFieldsState extends State<FirstSignUpFormFields> {
             onChanged: (String? newValue) {
               cubit.facultyController.text = newValue ?? '';
             },
+            validator: validateFaculty,
           ),
           verticalSpace(17),
           Text("الفرقة / المستوي:", style: TextStyles.font16BlackMedium),
@@ -55,6 +57,7 @@ class _FirstSignUpFormFieldsState extends State<FirstSignUpFormFields> {
             onChanged: (String? newValue) {
               cubit.levelController.text = newValue ?? '';
             },
+            validator: validateLevel,
           ),
           verticalSpace(17),
           Text(
@@ -66,6 +69,7 @@ class _FirstSignUpFormFieldsState extends State<FirstSignUpFormFields> {
             hintText: "التقدير",
             controller: cubit.lastGradeController,
             keyboardType: TextInputType.number,
+            validator: validateGrade,
           ),
           verticalSpace(17),
         ],

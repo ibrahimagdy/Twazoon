@@ -64,7 +64,7 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
                 currentPage: currentPage,
                 totalPages: signUpFormsScreens.length,
               ),
-              verticalSpace(45),
+              verticalSpace(30),
               Expanded(
                 child: SignUpPageViewBuilder(
                   controller: _controller,
@@ -77,9 +77,9 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
                   AppTextButton(
                     onPressed: _onNextPage,
                     textButton:
-                    currentPage == signUpFormsScreens.length - 1
-                        ? 'إنشاء حساب'
-                        : 'التالي',
+                        currentPage == signUpFormsScreens.length - 1
+                            ? 'إنشاء حساب'
+                            : 'التالي',
                   ),
                 ],
               ),
@@ -99,7 +99,7 @@ class _FirstSignUpScreenState extends State<SignUpScreen> {
                   ),
                 ],
               ),
-              verticalSpace(55),
+              verticalSpace(30),
             ],
           ),
         ),

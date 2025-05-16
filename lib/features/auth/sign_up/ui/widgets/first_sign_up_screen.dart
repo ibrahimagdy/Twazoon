@@ -7,11 +7,13 @@ class FirstSignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const FirstSignUpFormFields(),
-        const FirstSignUpFormQuestions(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const FirstSignUpFormFields(),
+          const FirstSignUpFormQuestions(),
+        ],
+      ),
     );
   }
 }

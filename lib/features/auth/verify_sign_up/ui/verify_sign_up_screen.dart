@@ -5,6 +5,7 @@ import 'package:twazoon/core/theming/styles.dart';
 import 'package:twazoon/features/auth/verify_sign_up/ui/widgets/verify_sign_up_form.dart';
 
 class VerifySignUpScreen extends StatelessWidget {
+
   const VerifySignUpScreen({super.key});
 
   @override

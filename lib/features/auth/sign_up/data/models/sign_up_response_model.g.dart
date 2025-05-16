@@ -10,7 +10,7 @@ SignUpResponseModel _$SignUpResponseModelFromJson(Map<String, dynamic> json) =>
     SignUpResponseModel(
       isSucceeded: json['isSucceeded'] as bool,
       statusCode: (json['statusCode'] as num).toInt(),
-      message: json['message'] as String?,
+      message: json['message'] as String,
       model: json['model'] as String?,
     );
 

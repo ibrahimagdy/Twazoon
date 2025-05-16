@@ -6,13 +6,13 @@ part 'sign_up_response_model.g.dart';
 class SignUpResponseModel {
   final bool isSucceeded;
   final int statusCode;
-  final String? message;
+  final String message;
   final String? model;
 
   SignUpResponseModel({
     required this.isSucceeded,
     required this.statusCode,
-    this.message,
+    required this.message,
     this.model,
   });
 

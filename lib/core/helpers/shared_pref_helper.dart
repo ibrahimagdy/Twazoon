@@ -11,6 +11,7 @@ class SharedPrefKeys {
   static const String isSurveyCompleted = 'isSurveyCompleted';
   static const String userEmail = 'userEmail';
   static const String userName = 'userName';
+  static const String isOtpVerified = 'isOtpVerified';
 }
 
 class SharedPrefHelper {
@@ -131,6 +132,13 @@ class SharedPrefHelper {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(key);
   }
+  static Future<void> setOtpVerified(bool value) async {
+    debugPrint('SharedPrefHelper : Setting OTP verified status to: $value');
+    await setData(SharedPrefKeys.isOtpVerified, value);
+  }
 
-
+  static Future<bool> isOtpVerified() async {
+    debugPrint('SharedPrefHelper : Getting OTP verification status');
+    return await getBool(SharedPrefKeys.isOtpVerified) ?? false;
+  }
 }

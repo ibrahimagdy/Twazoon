@@ -34,7 +34,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
   }
 
   Future<void> completeOnboarding(BuildContext context) async {
-    await SharedPrefHelper.setData(SharedPrefKeys.isFirstLaunch, false);
+    await SharedPrefHelper.setFirstLaunch(false);
     await SharedPrefHelper.clearAllSecuredData();
     if(context.mounted){
       context.pushReplacementNamed(Routes.loginScreen);
